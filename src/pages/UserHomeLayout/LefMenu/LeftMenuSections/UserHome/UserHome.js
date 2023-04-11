@@ -6,8 +6,8 @@ import PictureVideoStreaming from "./PictureVideoStreaming";
 const UserHome = () => {
   return (
     <>
-      <div className=" mt-4 flex justify-center w-screen xl:ml-32 sm:ml-16  ">
-        <div className="flex flex-col justify-center items-center  ">
+      <div className=" mt-4 flex justify-center w-screen  ">
+        <div className="flex flex-col justify-center items-center sm:justify-start  ">
           <TopImageSlider />
           <PictureVideoStreaming />
         </div>

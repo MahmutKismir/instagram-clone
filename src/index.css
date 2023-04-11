@@ -31,22 +31,23 @@
   }
 }
 
-@media only screen and (max-width: 1430px) {
+@media only screen and (max-width: 1295px) {
   .text-hidden {
     display: none; 
-    transition-duration: 0.3s;   
+    transition-duration: 0.3s;
+
   }
   .icon-show {
     display: flex;
   }
   .res-width {
     width: 95px;
-    transition-duration: 0.2s;
+    transition-duration: 0.3s;            
   }
   
 }
 
-@media only screen and (max-width: 1135px) {
+@media only screen and (max-width: 950px) {
   .suggestion-hidden {
     display: none;
   }
@@ -55,12 +56,13 @@
 @media only screen and (max-width: 1024px) {
   .res-width {
     width: 95px;
+    transition-duration: 0.3s;    
   }
 }
 
 .width-size {  
   width: 95px;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;  
 }
 
 

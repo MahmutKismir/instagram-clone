@@ -10,6 +10,7 @@ import { VscDiffAdded } from "react-icons/vsc";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import { useRef, useState } from "react";
+import SearchSlideMenu from "./LeftMenuSections/UserHome/SearchSlideMenu";
 
 const LeftMenu = () => {
   const [show, setShow] = useState(true);
@@ -27,7 +28,7 @@ const LeftMenu = () => {
     <>
       <div
         ref={lefmenuRef}
-        className="flex w-[270px] res-width  h-screen p-3 border-r border-1 fixed top-0 left-0 duration-200"
+        className="flex w-[270px] z-50 bg-white res-width h-screen p-3 border-r border-1 fixed top-0 left-0 "
       >
         <div className=" flex flex-col items-center w-full">
           <div className="ml-4 w-full  h-28">
@@ -44,11 +45,19 @@ const LeftMenu = () => {
                 </div>
               </Link>
             )}
-            <Link to="userHome">
-              <div className="icon-show  justify-start items-center  hidden h-full p-3 ">
-                <Icon className="text-[28px]" icon="bi:instagram" />
-              </div>
-            </Link>
+            {show ? (
+              <Link to="userHome">
+                <div className="icon-show  justify-start items-center ml-[2px] hidden h-full p-3 ">
+                  <Icon className="text-[28px]" icon="bi:instagram" />
+                </div>
+              </Link>
+            ) : (
+              <Link to="userHome" className="hidden">
+                <div className="icon-show  justify-start hidden h-full p-3 ">
+                  <Icon className="text-[28px]" icon="bi:instagram" />
+                </div>
+              </Link>
+            )}
           </div>
           <div className=" w-full h-full p-2">
             <Link to="userHome">
@@ -66,11 +75,15 @@ const LeftMenu = () => {
               className={
                 show
                   ? "flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[3px] "
-                  : "border-1 rounded-full flex  hover:bg-slate-50 cursor-pointer h-14 w-14 "
+                  : "border-1 rounded-full flex   hover:bg-slate-50 cursor-pointer h-14 w-14 "
               }
             >
               <div className="flex items-center h-full p-2">
-                <CiSearch className={show ? 'text-3xl mr-5' : 'text-black text-3xl ml-1 '} />
+                <CiSearch
+                  className={
+                    show ? "text-3xl mr-5" : "text-black text-3xl ml-1 "
+                  }
+                />
                 <div className={show ? "text-hidden text-base" : "hidden"}>
                   Ara
                 </div>
@@ -143,6 +156,7 @@ const LeftMenu = () => {
           </div>
         </div>
       </div>
+      <SearchSlideMenu show={show} />
     </>
   );
 };
