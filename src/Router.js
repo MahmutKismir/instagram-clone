@@ -2,13 +2,11 @@ import { useRoutes } from "react-router-dom";
 import LoginPage from "./pages/Login";
 import Register from "./pages/Register/Register";
 import PasswordReset from "./pages/PasswordReset";
-
 import Reels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Reels";
 import UserHomeLayout from "./pages/UserHomeLayout";
-
 import UserProfile from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile";
-import Discover from './pages/UserHomeLayout/LefMenu/LeftMenuSections/Discover';
 import UserHome from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserHome/UserHome";
+import Discover from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Discover/Discover";
 
 
 function Router() {
@@ -35,7 +33,7 @@ function Router() {
         },       
         {
           path: "discover",
-          element: <Discover/>,
+          element:<Discover />
         },
         {
           path:'reels',

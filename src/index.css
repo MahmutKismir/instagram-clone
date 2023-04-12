@@ -31,10 +31,10 @@
   }
 }
 
-@media only screen and (max-width: 1295px) {
+@media only screen and (max-width: 1420px) {
   .text-hidden {
     display: none; 
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
 
   }
   .icon-show {
@@ -42,12 +42,12 @@
   }
   .res-width {
     width: 95px;
-    transition-duration: 0.3s;            
+    transition-duration: 0.5s;            
   }
   
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1135px) {
   .suggestion-hidden {
     display: none;
   }
@@ -56,7 +56,7 @@
 @media only screen and (max-width: 1024px) {
   .res-width {
     width: 95px;
-    transition-duration: 0.3s;    
+    transition-duration: 0.5s;    
   }
 }
 

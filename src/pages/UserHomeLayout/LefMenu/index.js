@@ -10,7 +10,8 @@ import { VscDiffAdded } from "react-icons/vsc";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import { useRef, useState } from "react";
-import SearchSlideMenu from "./LeftMenuSections/UserHome/SearchSlideMenu";
+import SearchSlideMenu from "./LeftMenuSections/SearchSlideMenu";
+
 
 const LeftMenu = () => {
   const [show, setShow] = useState(true);
@@ -154,9 +155,9 @@ const LeftMenu = () => {
               <div className={show ? "text-hidden" : "hidden"}>Daha fazla</div>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
-      <SearchSlideMenu show={show} />
+      <SearchSlideMenu show={show} />      
     </>
   );
 };
