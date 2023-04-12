@@ -9,8 +9,8 @@ const SearchSlideMenu = ({ show }) => {
       <div
         className={
           show
-            ? "transform -translate-x-[395px]"
-            : "w-[395px] h-full fixed  bg-white z-40 top-0 left-[94px] border-r border-1 rounded-r-2xl transition duration-500 shadow-[10px_0_20px_-10px_2px] shadow-[#bfbcbc] flex flex-col  "
+            ? "transform -translate-x-[395px]  h-screen fixed  bg-white z-40 top-0 left-0 border-r border-1 rounded-r-2xl transition duration-500 shadow-[10px_0_20px_-10px_2px] shadow-[#bfbcbc] flex flex-col"
+            : "transform translate-x-[94px] h-screen fixed  bg-white z-40 top-0 left-0 border-r border-1 rounded-r-2xl transition duration-500 shadow-[10px_0_20px_-10px_2px] shadow-[#bfbcbc] flex flex-col  "
         }
       >
         <div className="m-3 flex flex-col">
@@ -21,7 +21,7 @@ const SearchSlideMenu = ({ show }) => {
               className=" w-full h-10 py-1 px-4 bg-[#efefef] rounded-md relative outline-none border-none "
               placeholder="Ara"
             />
-            <RiCloseCircleFill className="absolute mt-3 ml-[335px] text-[#c8c8c8]" />
+            <RiCloseCircleFill className="absolute mt-3 ml-[310px] text-[#c8c8c8]" />
           </div>
         </div>
         <div className="w-full h-full border-t ">

@@ -38,9 +38,10 @@ const PictureVideoStreaming = () => {
                 </div>
                 <div className="h-[460px] w-[460px] ">
                   <img
+                  style={{objectFit:'cover',height:'100%'}}  
                     src={item.posterImage}
                     alt=""
-                    className="h-[460px] w-[460px] rounded"
+                    className="rounded"
                   />
                 </div>
                 <div className=" w-[460px] max-h-[248px]">
