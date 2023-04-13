@@ -1,3 +1,6 @@
+import mjdunk from '../../../../../../static/mjdunk.mp4'
+
+
 export const streaminData = [
   {
     id: 1,
@@ -29,7 +32,8 @@ export const streaminData = [
     name: "Michael Jordan",
     image:
       "https://i.guim.co.uk/img/media/86302dbcc55f07d65c45bb3baf8c864e36bd4320/0_155_3600_2159/master/3600.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=df936fc2e7b2b84a58f2e293ecde27de",
-      posterImage:'https://media.npr.org/assets/img/2021/10/25/gettyimages-52286419_custom-0dfd34b1ff37d3a16f63d7e027c1b52385b21485-s1100-c50.jpg'
+  
+    video:mjdunk
   },
   {
     id: 5,
