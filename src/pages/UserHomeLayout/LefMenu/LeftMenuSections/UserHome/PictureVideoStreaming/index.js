@@ -7,7 +7,6 @@ import { Icon } from "@iconify/react";
 import { streaminData } from "./dataStr";
 
 const PictureVideoStreaming = () => {
-  
   return (
     <>
       <div className="w-[615px] h-screen flex flex-col  items-center  ">
@@ -37,12 +36,22 @@ const PictureVideoStreaming = () => {
                   </div>
                 </div>
                 <div className="h-[460px] w-[460px] ">
-                  <img
-                  style={{objectFit:'cover',height:'100%'}}  
-                    src={item.posterImage}
-                    alt=""
-                    className="rounded"
-                  />
+                  {item.posterImage ? (
+                    <img
+                      style={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      src={item.posterImage}
+                      alt=""
+                      className="rounded"
+                    />
+                  ) : (
+                    <video controls className="object-cover h-full w-full">
+                      <source src={item.video} type="video/mp4" />
+                    </video>
+                  )}
                 </div>
                 <div className=" w-[460px] max-h-[248px]">
                   <section className="w-[460px] h-[46px] flex items-center  ">
