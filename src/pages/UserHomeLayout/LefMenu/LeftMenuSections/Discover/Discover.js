@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import { GrClose } from "react-icons/gr";
 import { MdVerified } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -11,11 +10,11 @@ import { BsCameraReels } from "react-icons/bs";
 import { reelsData } from "../UserHome/topImageSlider/data";
 
 const Discover = () => {
+  const modalRef = useRef();
+
   useEffect(() => {
     modalRef.current.classList.add("hidden");
   }, []);
-
-  const modalRef = useRef();
 
   const handleOpen = () => {
     modalRef.current.classList.add("flex");
@@ -25,6 +24,11 @@ const Discover = () => {
   const handleClose = () => {
     modalRef.current.classList.add("hidden");
   };
+  
+
+  // const dataId = reelsData.map((item) => item.id)
+  // console.log(dataId)
+
 
   return (
     <>
@@ -33,73 +37,145 @@ const Discover = () => {
           <div className=" grid grid-cols-3 gap-1">
             {reelsData.map((item, index) => {
               return (
-                <div
-                  onClick={handleOpen}
-                  key={index}
-                  className="h-[310px] w-[312px] bg-black cursor-pointer relative"
-                >
-                  <div className=" absolute top-36 ml-20 flex justify-between items-center  w-[135px]">
-                    <span className="flex text-white justify-center items-center">
-                      <AiFillHeart className="mr-2 text-xl" />
-                      1463
-                    </span>
-                    <span className="flex text-white justify-center items-center">
-                      <TbMessageCircle2Filled className="mr-2 text-lg" />
-                      293
-                    </span>
-                  </div>
-                  {item.image ? (
-                    <div className="h-full w-full">
-                      <Icon
-                        className="absolute top-1 right-2 text-white text-lg"
-                        icon="mdi:image-filter-none"
-                      />
-                      <img
-                        className="hover:opacity-70 relative object-cover h-full w-full"
-                        src={item.image}
-                        alt=""
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-full w-full">
-                      <BsCameraReels className="absolute top-1 right-2 text-white text-lg" />
-                      <video
-                        preload="auto"
-                        className="object-cover h-full w-full"
-                      >
-                        <source src={item.video} type="video/mp4" />
-                      </video>
+                <>
+                  {item.image && (
+                    <div
+                      onClick={handleOpen}
+                      key={index}
+                      className="h-[310px] w-[312px] cursor-pointer relative   "
+                    >
+                      <div className="h-full w-full bg-black">
+                        <Icon
+                          className="absolute top-1 right-2 text-white text-lg"
+                          icon="mdi:image-filter-none"
+                        />
+                        <div className=" absolute top-36 ml-20 text-white flex justify-between items-center  w-[135px]">
+                          <span className=" flex text-white justify-center items-center">
+                            <AiFillHeart className="mr-2 text-xl" />
+                            1463
+                          </span>
+                          <span className="flex text-white justify-center items-center">
+                            <TbMessageCircle2Filled className="mr-2 text-lg" />
+                            293
+                          </span>
+                        </div>
+                        <img
+                          className="hover:opacity-70 object-cover h-full w-full"
+                          src={item.image}
+                          alt=""
+                        />
+                      </div>
                     </div>
                   )}
-                </div>
+                  {item.video && (
+                    <div
+                      onClick={handleOpen}
+                      key={index}
+                      className="h-[310px] w-[312px] cursor-pointer relative "
+                    >
+                      <div className="h-full w-full bg-black">
+                        <div className=" absolute  top-36 ml-20 flex justify-between items-center  w-[135px]">
+                          <span className=" flex text-white justify-center items-center">
+                            <AiFillHeart className="mr-2 text-xl" />
+                            1463
+                          </span>
+                          <span className="flex text-white justify-center items-center">
+                            <TbMessageCircle2Filled className="mr-2 text-lg" />
+                            293
+                          </span>
+                        </div>
+                        <BsCameraReels className="absolute top-1 right-2 text-white text-lg" />
+                        <video
+                          preload="auto"
+                          className="object-cover hover:opacity-70 h-full w-full"
+                        >
+                          <source src={item.video} type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                  )}
+                  {item.reels && (
+                    <div
+                      onClick={handleOpen}
+                      key={index}
+                      className="h-[623px] w-[312px] cursor-pointer relative row-span-2"
+                    >
+                      <div className="h-full w-full bg-black">
+                        <div className=" absolute  top-36 ml-20 flex justify-between items-center  w-[135px]">
+                          <span className=" flex text-white justify-center items-center">
+                            <AiFillHeart className="mr-2 text-xl" />
+                            1463
+                          </span>
+                          <span className="flex text-white justify-center items-center">
+                            <TbMessageCircle2Filled className="mr-2 text-lg" />
+                            293
+                          </span>
+                        </div>
+                        <BsCameraReels className="absolute top-1 right-2 text-white text-lg" />
+                        <video
+                          preload="auto"
+                          className="object-cover hover:opacity-70 h-full w-full"
+                        >
+                          <source src={item.reels} type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                  )}
+                </>
               );
             })}
           </div>
         </div>
       </div>
+
+     {
+       //SECTION -  Modal section start
+     }
       <div
         ref={modalRef}
         className="bg-[rgba(0,0,0,0.4)] fixed z-[500]  top-0 bottom-0 left-0 right-0 justify-center "
       >
+        <button className="absolute top-1/3 left-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  ">
+          <Icon
+            className="text-4xl text-gray-600"
+            icon="ic:sharp-keyboard-arrow-left"
+          />
+        </button>
+        <button className="absolute top-1/3 right-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  ">
+          <Icon
+            className="text-4xl text-gray-600"
+            icon="ic:sharp-keyboard-arrow-right"
+          />
+        </button>
         <div
           onClick={handleClose}
           className="absolute text-white z-[999] right-5 top-5"
         >
-          <GrClose className="text-xl cursor-pointer  text-white " />
+          <Icon
+            className="text-3xl cursor-pointer "
+            icon="material-symbols:close-rounded"
+          />
         </div>
 
-        <div className="grid grid-cols-2 h-[91%] w-3/5 mt-7 ">
+        <div className="grid grid-cols-2 h-[94%] w-3/5 mt-7 ">
           <div>
-            {/* <img className="object-cover h-full" src="" alt="" /> */}
+           {
+            
+           }
 
-            <video controls autoPlay muted className="object-cover h-full w-full">
+            <video
+              controls
+              autoPlay
+              muted
+              className="object-cover h-full w-full"
+            >
               {reelsData.map((video, index) => {
-                return <source src={video.video} type="video/mp4" />;
+                return <source src={video.reels} type="video/mp4" />;
               })}
             </video>
           </div>
           <div className="flex flex-col  h-full w-full ">
-            <div className="flex w-full h-[60px] bg-white">
+            <div className="flex w-full h-[60px] bg-white border-b">
               <div className="w-full h-[60px]">
                 <div className=" flex w-full h-full justify-between items-center p-3">
                   <div className=" h-[46px] w-[46px] mr-2 flex items-center ">
@@ -169,8 +245,8 @@ const Discover = () => {
                 <textarea
                   name=""
                   id=""
-                  cols="40"
-                  rows="5"
+                  cols="60"
+                 
                   placeholder="Yorum ekle..."
                   className="text-[#737373] text-sm mt-4  resize-none border-none outline-none"
                 ></textarea>
@@ -182,7 +258,10 @@ const Discover = () => {
           </div>
         </div>
       </div>
-      {/* <DiscoverModal />             */}
+      {
+        //!SECTION  Modal section and
+      }
+      
     </>
   );
 };
