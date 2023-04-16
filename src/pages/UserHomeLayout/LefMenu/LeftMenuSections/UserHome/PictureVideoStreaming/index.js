@@ -54,7 +54,7 @@ const PictureVideoStreaming = () => {
                   )}
                 </div>
                 <div className=" w-[460px] max-h-[248px]">
-                  <section className="w-[460px] h-[46px] flex items-center  ">
+                <section className="w-[460px] h-[46px] flex items-center  ">
                     <div className="flex">
                       <button>
                         <AiOutlineHeart className="text-2xl mr-3 hover:text-[#737373]" />

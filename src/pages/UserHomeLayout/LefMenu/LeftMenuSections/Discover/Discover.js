@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import { MdVerified } from "react-icons/md";
@@ -8,129 +8,93 @@ import { FiMessageCircle } from "react-icons/fi";
 import { Icon } from "@iconify/react";
 import { BsCameraReels } from "react-icons/bs";
 import { reelsData } from "../UserHome/topImageSlider/data";
+import mjdunk from "../../../../../static/mjdunk.mp4";
 
 const Discover = () => {
+  const [data, seData] = useState(reelsData);
+
   const modalRef = useRef();
 
   useEffect(() => {
     modalRef.current.classList.add("hidden");
   }, []);
 
-  const handleOpen = () => {
+  const handleOpen = (id) => {
     modalRef.current.classList.add("flex");
     modalRef.current.classList.remove("hidden");
+    console.log(id);
   };
 
   const handleClose = () => {
     modalRef.current.classList.add("hidden");
   };
-  
-
-  // const dataId = reelsData.map((item) => item.id)
-  // console.log(dataId)
-
 
   return (
     <>
-      <div className="flex justify-center h-screen w-full p-5 md:ml-40 overflow-auto">
+      <div className="flex justify-center h-screen w-full p-5 md:ml-40 ">
         <div className="w-[970px] h-screen p-3">
           <div className=" grid grid-cols-3 gap-1">
-            {reelsData.map((item, index) => {
+            {data.map((item, index) => {
               return (
-                <>
-                  {item.image && (
-                    <div
-                      onClick={handleOpen}
-                      key={index}
-                      className="h-[310px] w-[312px] cursor-pointer relative   "
-                    >
-                      <div className="h-full w-full bg-black">
-                        <Icon
-                          className="absolute top-1 right-2 text-white text-lg"
-                          icon="mdi:image-filter-none"
-                        />
-                        <div className=" absolute top-36 ml-20 text-white flex justify-between items-center  w-[135px]">
-                          <span className=" flex text-white justify-center items-center">
-                            <AiFillHeart className="mr-2 text-xl" />
-                            1463
-                          </span>
-                          <span className="flex text-white justify-center items-center">
-                            <TbMessageCircle2Filled className="mr-2 text-lg" />
-                            293
-                          </span>
-                        </div>
-                        <img
-                          className="hover:opacity-70 object-cover h-full w-full"
-                          src={item.image}
-                          alt=""
-                        />
-                      </div>
+                <div
+                  onClick={() => handleOpen(item.id)}
+                  key={index}
+                  className={
+                    item.reels
+                      ? "h-[623px] w-[312px] cursor-pointer relative row-span-2"
+                      : "h-[310px] w-[312px] cursor-pointer relative "
+                  }
+                >
+                  <div className="h-full w-full bg-black">
+                    <Icon
+                      className="absolute top-1 right-2 text-white text-lg"
+                      icon="mdi:image-filter-none"
+                    />
+                    <div className=" absolute top-36 ml-20 text-white flex justify-between items-center  w-[135px]">
+                      <span className=" flex text-white justify-center items-center">
+                        <AiFillHeart className="mr-2 text-xl" />
+                        1463
+                      </span>
+                      <span className="flex text-white justify-center items-center">
+                        <TbMessageCircle2Filled className="mr-2 text-lg" />
+                        293
+                      </span>
                     </div>
-                  )}
-                  {item.video && (
-                    <div
-                      onClick={handleOpen}
-                      key={index}
-                      className="h-[310px] w-[312px] cursor-pointer relative "
-                    >
-                      <div className="h-full w-full bg-black">
-                        <div className=" absolute  top-36 ml-20 flex justify-between items-center  w-[135px]">
-                          <span className=" flex text-white justify-center items-center">
-                            <AiFillHeart className="mr-2 text-xl" />
-                            1463
-                          </span>
-                          <span className="flex text-white justify-center items-center">
-                            <TbMessageCircle2Filled className="mr-2 text-lg" />
-                            293
-                          </span>
-                        </div>
-                        <BsCameraReels className="absolute top-1 right-2 text-white text-lg" />
-                        <video
-                          preload="auto"
-                          className="object-cover hover:opacity-70 h-full w-full"
-                        >
-                          <source src={item.video} type="video/mp4" />
-                        </video>
-                      </div>
-                    </div>
-                  )}
-                  {item.reels && (
-                    <div
-                      onClick={handleOpen}
-                      key={index}
-                      className="h-[623px] w-[312px] cursor-pointer relative row-span-2"
-                    >
-                      <div className="h-full w-full bg-black">
-                        <div className=" absolute  top-36 ml-20 flex justify-between items-center  w-[135px]">
-                          <span className=" flex text-white justify-center items-center">
-                            <AiFillHeart className="mr-2 text-xl" />
-                            1463
-                          </span>
-                          <span className="flex text-white justify-center items-center">
-                            <TbMessageCircle2Filled className="mr-2 text-lg" />
-                            293
-                          </span>
-                        </div>
-                        <BsCameraReels className="absolute top-1 right-2 text-white text-lg" />
-                        <video
-                          preload="auto"
-                          className="object-cover hover:opacity-70 h-full w-full"
-                        >
-                          <source src={item.reels} type="video/mp4" />
-                        </video>
-                      </div>
-                    </div>
-                  )}
-                </>
+                    {item.image && (
+                      <img
+                        className="hover:opacity-70 object-cover h-full w-full"
+                        src={item.image}
+                        alt=""
+                      />
+                    )}
+                    {item.video && (
+                      <video
+                        preload="auto"
+                        className="object-cover hover:opacity-70 h-full w-full"
+                      >
+                        <source src={item.video} type="video/mp4" />
+                      </video>
+                    )}
+                    {item.reels && (
+                      <video
+                        preload="auto"
+                        className="object-cover hover:opacity-70 h-full w-full"
+                      >
+                        <source src={item.reels} type="video/mp4" />
+                      </video>
+                    )}
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
       </div>
 
-     {
-       //SECTION -  Modal section start
-     }
+      {
+        //SECTION -  Modal section start
+      }
+
       <div
         ref={modalRef}
         className="bg-[rgba(0,0,0,0.4)] fixed z-[500]  top-0 bottom-0 left-0 right-0 justify-center "
@@ -157,22 +121,43 @@ const Discover = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 h-[94%] w-3/5 mt-7 ">
-          <div>
-           {
-            
-           }
-
+        <div className="grid grid-cols-2 h-[94%] w-3/5 absolute top-6">
+          <div className="h-full  w-full border-r">
             <video
               controls
               autoPlay
               muted
               className="object-cover h-full w-full"
             >
-              {reelsData.map((video, index) => {
-                return <source src={video.reels} type="video/mp4" />;
-              })}
+              <source src={mjdunk} type="video/mp4" />
             </video>
+            {/* {item.image && (
+                    <img
+                      className="h-full w-full object-cover "
+                      src={item.image}
+                      alt=""
+                    />
+                  )} */}
+            {/* {item.video && (
+                    <video
+                      controls
+                      autoPlay
+                      muted
+                      className="object-cover h-full w-full"
+                    >
+                      <source src={item.video} type="video/mp4" />
+                    </video>
+                  )}
+                  {item.reels && (
+                    <video
+                      controls
+                      autoPlay
+                      muted
+                      className="object-cover h-full w-full"
+                    >
+                      <source src={item.reels} type="video/mp4" />
+                    </video>
+                  )} */}
           </div>
           <div className="flex flex-col  h-full w-full ">
             <div className="flex w-full h-[60px] bg-white border-b">
@@ -246,7 +231,6 @@ const Discover = () => {
                   name=""
                   id=""
                   cols="60"
-                 
                   placeholder="Yorum ekle..."
                   className="text-[#737373] text-sm mt-4  resize-none border-none outline-none"
                 ></textarea>
@@ -258,10 +242,10 @@ const Discover = () => {
           </div>
         </div>
       </div>
+
       {
         //!SECTION  Modal section and
       }
-      
     </>
   );
 };
