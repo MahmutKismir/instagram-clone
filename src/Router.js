@@ -2,7 +2,7 @@ import { useRoutes } from "react-router-dom";
 import LoginPage from "./pages/Login";
 import Register from "./pages/Register/Register";
 import PasswordReset from "./pages/PasswordReset";
-import Reels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Reels";
+import Reels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Reels/Reels";
 import UserHomeLayout from "./pages/UserHomeLayout";
 import UserProfile from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile";
 import UserHome from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserHome/UserHome";

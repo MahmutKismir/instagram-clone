@@ -6,18 +6,6 @@ import { reelsData } from "./data";
 
 
 const TopImageSlider = () => {
-  // const [currentSlide, setCurrentSlide] = useState(0);
-  // const slideLength = reelsData.length;
-
-  // const nextSlide = () => {
-  //   setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-  // };
-
-  // console.log(currentSlide);
-
-  // useEffect(() => {
-  //   setCurrentSlide(0);
-  // }, []);
 
   return (
     <>
