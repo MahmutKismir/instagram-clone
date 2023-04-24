@@ -69,15 +69,11 @@ const Reels = () => {
                     <div className="flex flex-col w-full h-full justify-end items-center ">
                       <button className="h-[44px] w-[44px] flex flex-col  justify-center items-center mb-4  hover:text-[#737373] ">
                         <AiOutlineHeart className="text-2xl " />
-                        <span className="text-xs">
-                            1.68 M
-                        </span>
+                        <span className="text-xs">1.68 M</span>
                       </button>
                       <button className="h-[44px] w-[44px] flex flex-col  justify-center items-center mb-4 hover:text-[#737373]">
                         <FiMessageCircle className="text-2xl hover:text-[#737373]" />
-                        <span className="text-xs">
-                            35.6 B
-                        </span>
+                        <span className="text-xs">35.6 B</span>
                       </button>
                       <button className="h-[44px] w-[44px] flex  justify-center mb-2">
                         <Icon
@@ -92,12 +88,16 @@ const Reels = () => {
                         />
                       </button>
                       <button className="h-[44px] w-[44px] flex  justify-center">
-                      <BsThreeDots className="hover:text-[#737373]  h-[24px] " />
+                        <BsThreeDots className="hover:text-[#737373]  h-[24px] " />
                       </button>
                       <button className="h-[30px] w-[44px] flex items-end justify-center">
-                        <img src={item.image} className="object-cover h-[24px] w-[24px] rounded-md" alt="" />
-                    </button>
-                    </div>                    
+                        <img
+                          src={item.image}
+                          className="object-cover h-[24px] w-[24px] rounded-md"
+                          alt=""
+                        />
+                      </button>
+                    </div>
                   </section>
                 </div>
               </div>

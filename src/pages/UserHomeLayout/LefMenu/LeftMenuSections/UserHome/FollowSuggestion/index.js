@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SwitchModal from "../../components/SwitchModal";
 
 const suggestion = [
   {
@@ -13,36 +14,41 @@ const suggestion = [
     id: 2,
     username: "airCanada",
     name: "Vince Carter",
-    image:"https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2020/06/vc3.jpg.rend.hgtvcom.1280.914.suffix/1593191957820.jpeg",
+    image:
+      "https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2020/06/vc3.jpg.rend.hgtvcom.1280.914.suffix/1593191957820.jpeg",
   },
   {
     id: 3,
     username: "tmac",
     name: "Tracy Lamar McGrady",
-    image:"https://media.gettyimages.com/id/51188472/photo/tracy-mcgrady-portraits.jpg?s=1024x1024&w=gi&k=20&c=V6RLb1Q3ZZrFGljovDMhhwJDcR1i_f_uDwqoZJ3x-6M=",
+    image:
+      "https://media.gettyimages.com/id/51188472/photo/tracy-mcgrady-portraits.jpg?s=1024x1024&w=gi&k=20&c=V6RLb1Q3ZZrFGljovDMhhwJDcR1i_f_uDwqoZJ3x-6M=",
   },
   {
     id: 4,
     username: "Mj",
     name: "Michael Jordan",
-    image:"https://i.guim.co.uk/img/media/86302dbcc55f07d65c45bb3baf8c864e36bd4320/0_155_3600_2159/master/3600.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=df936fc2e7b2b84a58f2e293ecde27de",
+    image:
+      "https://i.guim.co.uk/img/media/86302dbcc55f07d65c45bb3baf8c864e36bd4320/0_155_3600_2159/master/3600.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=df936fc2e7b2b84a58f2e293ecde27de",
   },
   {
     id: 5,
     username: "shaq",
     name: "Shaquille O'Neal",
-    image:"https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
+    image:
+      "https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
   },
 ];
 
 const FollowSuggestion = () => {
+  const [switchModal, setSwitchModal] = useState(false);
   return (
     <>
       <div className="mt-12 ml-5 w-[323px] suggestion-hidden">
         <div className=" flex items-center mb-4">
           <Link to="">
             <img
-              className=" h-[58px] w-[58px] rounded-full"
+              className=" h-[58px] w-[s58px] rounded-full  object-cover"
               src="https://cdn1.ntv.com.tr/gorsel/VI4np0LDZkiJP4m8SjqBVA.jpg?width=1000&mode=crop&scale=both"
               alt=""
             />
@@ -54,9 +60,16 @@ const FollowSuggestion = () => {
             <span className="text-gray-400 text-sm">Kobe Bean Bryant</span>
           </div>
           <div>
-            <button className="text-xs font-medium text-colortext">
+            <button
+              onClick={() => setSwitchModal(true)}
+              className="text-xs font-medium text-colortext"
+            >
               Geçiş Yap
             </button>
+            <SwitchModal
+              switchModal={switchModal}
+              onClose={() => setSwitchModal(false)}
+            />
           </div>
         </div>
         <div className="w-[323px] h-[19px] flex items-center mb-2">
@@ -97,18 +110,40 @@ const FollowSuggestion = () => {
         </div>
         <div className="w-[325px] h-[39px]">
           <ul className="flex flex-wrap mb-4">
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Hakkında . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Yardım . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Basın . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>API . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>İş Fırsatları . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Gizlilik . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Koşullar . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Konumlar . </Link></li>
-            <li className="text-xs text-[#c7c7c7] ml-1"><Link>Dil . </Link></li>
-            <li className="text-xs text-[#c7c7c7]"><Link>Meta Verified</Link></li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Hakkında . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Yardım . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Basın . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>API . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>İş Fırsatları . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Gizlilik . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Koşullar . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Konumlar . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7] ml-1">
+              <Link>Dil . </Link>
+            </li>
+            <li className="text-xs text-[#c7c7c7]">
+              <Link>Meta Verified</Link>
+            </li>
           </ul>
-          <span className="text-xs text-[#c7c7c7] ml-1">© 2023 INSTAGRAM FROM META</span>
+          <span className="text-xs text-[#c7c7c7] ml-1">
+            © 2023 INSTAGRAM FROM META
+          </span>
         </div>
       </div>
     </>
