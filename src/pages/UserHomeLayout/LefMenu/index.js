@@ -110,6 +110,7 @@ const LeftMenu = () => {
                 </div>
               </div>
             </Link>
+            <Link to='message'>
             <div className="flex h-14 w-full  hover:bg-slate-50  hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[7px]">
               <div className="flex justify-start items-center h-full p-2">
                 <img src={InstagramMessageIcon} className="h-6 mr-4" alt="" />
@@ -118,6 +119,7 @@ const LeftMenu = () => {
                 </div>
               </div>
             </div>
+            </Link>
             <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[6px] ">
               <div className="flex justify-start items-center h-full p-2">
                 <AiOutlineHeart className="text-2xl mr-4" />

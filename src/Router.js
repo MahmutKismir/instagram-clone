@@ -7,6 +7,7 @@ import UserHomeLayout from "./pages/UserHomeLayout";
 import UserProfile from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile";
 import UserHome from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserHome/UserHome";
 import Discover from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Discover/Discover";
+import Message from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Message/Message";
 
 
 function Router() {
@@ -38,6 +39,10 @@ function Router() {
         {
           path:'reels',
           element:<Reels />
+        },
+        {
+          path:'message',
+          element:<Message />
         },
         {
           path:'userprofile',
