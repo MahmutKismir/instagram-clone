@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import InstagramHomeIcon from "../../../static/home.png";
+import HomeIcon from "../../../static/home.svg";
+// import HomeBlack from "../../../static/homeblack.svg";
 import ReelsIcon from "../../../static/reels.png";
 import InstagramTextLogo from "../../../static/insta.png";
 import { Link } from "react-router-dom";
@@ -9,27 +10,34 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { VscDiffAdded } from "react-icons/vsc";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import SearchSlideMenu from "./LeftMenuSections/SearchSlideMenu";
-
+import CreateModal from "./LeftMenuSections/components/CreateModal";
 
 const LeftMenu = () => {
   const [show, setShow] = useState(true);
-
-  const lefmenuRef = useRef();
+  const [notice, setNotice] = useState(false);
+  const [create, setCreate] = useState(false)
 
   const showEffect = () => {
     show ? setShow(false) : setShow(true);
-    show
-      ? lefmenuRef.current.classList.add("width-size")
-      : lefmenuRef.current.classList.remove("width-size");
+    setNotice(true)
+   
   };
+  const noticeControl =()=> {
+    show ? setShow(false) : setShow(true);
+    setNotice(false)
+  }
+  
 
   return (
     <>
       <div
-        ref={lefmenuRef}
-        className="flex w-[270px] z-50 bg-white res-width h-screen p-3 border-r border-1 fixed top-0 left-0 "
+        className={
+          show
+            ? "flex w-[270px] z-50 bg-white res-width h-screen p-3 border-r border-1 fixed top-0 left-0"
+            : "flex w-[95px] z-50 bg-white h-full res-width p-3 border-r border-1 fixed top-0 left-0"
+        }
       >
         <div className=" flex flex-col items-center w-full">
           <div className="ml-4 w-full  h-28">
@@ -62,9 +70,18 @@ const LeftMenu = () => {
           </div>
           <div className=" w-full h-full p-2">
             <Link to="userHome">
-              <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-400 delay-100 cursor-pointer ml-[5px]">
+              <div className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-400 delay-100 cursor-pointer">
                 <div className="flex justify-start items-center h-full p-2">
-                  <img src={InstagramHomeIcon} className="h-7 mr-4" alt="" />
+                  <img
+                    src={HomeIcon}
+                    className="ml-[6px] mr-4 hover:h-[26px]"
+                    alt=""
+                  />
+                  {/* <img
+                    src={HomeBlack}
+                    className="ml-[6px] mr-4 hover:h-[26px]"
+                    alt=""
+                  /> */}
                   <div className={show ? "text-hidden text-base  " : "hidden"}>
                     Ana Sayfa
                   </div>
@@ -73,11 +90,12 @@ const LeftMenu = () => {
             </Link>
             <div
               onClick={showEffect}
-              className={
-                show
-                  ? "flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[3px] "
-                  : "border-1 rounded-full flex   hover:bg-slate-50 cursor-pointer h-14 w-14 "
-              }
+              className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[3px]"
+              // className={
+              //   show
+              //     ? "flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[3px] "
+              //     : "border-1 rounded-xl flex   hover:bg-slate-100 cursor-pointer h-14 w-14 "
+              // }
             >
               <div className="flex items-center h-full p-2">
                 <CiSearch
@@ -91,7 +109,7 @@ const LeftMenu = () => {
               </div>
             </div>
             <Link to="discover">
-              <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[4px] ">
+              <div className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[4px] ">
                 <div className="flex justify-start items-center h-full p-2">
                   <Icon className="text-3xl mr-4" icon="ph:compass-thin" />
                   <div className={show ? "text-hidden text-base" : "hidden"}>
@@ -101,7 +119,7 @@ const LeftMenu = () => {
               </div>
             </Link>
             <Link to="reels">
-              <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[5px]">
+              <div className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[5px]">
                 <div className="flex justify-start items-center h-full p-2">
                   <img src={ReelsIcon} className="h-7 mr-4" alt="" />
                   <div className={show ? "text-hidden text-base" : "hidden"}>
@@ -110,17 +128,20 @@ const LeftMenu = () => {
                 </div>
               </div>
             </Link>
-            <Link to='message'>
-            <div className="flex h-14 w-full  hover:bg-slate-50  hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[7px]">
-              <div className="flex justify-start items-center h-full p-2">
-                <img src={InstagramMessageIcon} className="h-6 mr-4" alt="" />
-                <div className={show ? "text-hidden text-base" : "hidden"}>
-                  Mesajlar
+            <Link to="message">
+              <div className="flex h-14 w-full  hover:bg-slate-100  hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[7px]">
+                <div className="flex justify-start items-center h-full p-2">
+                  <img src={InstagramMessageIcon} className="h-6 mr-4" alt="" />
+                  <div className={show ? "text-hidden text-base" : "hidden"}>
+                    Mesajlar
+                  </div>
                 </div>
               </div>
-            </div>
             </Link>
-            <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-[6px] ">
+            <div
+              onClick={noticeControl}
+              className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-[6px] "
+            >
               <div className="flex justify-start items-center h-full p-2">
                 <AiOutlineHeart className="text-2xl mr-4" />
                 <div className={show ? "text-hidden text-base" : "hidden"}>
@@ -128,16 +149,17 @@ const LeftMenu = () => {
                 </div>
               </div>
             </div>
-            <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-2">
+            <div onClick={() => setCreate(true)} className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-2">
               <div className="flex justify-start items-center h-full p-2">
                 <VscDiffAdded className="text-2xl mr-4" />
                 <div className={show ? "text-hidden text-base" : "hidden"}>
                   Oluştur
                 </div>
-              </div>
+              </div>              
             </div>
+            <CreateModal create={create} onClose={() => setCreate(false)} />
             <Link to="userprofile">
-              <div className="flex h-14 w-full  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ml-2">
+              <div className="flex h-14 w-full  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ml-2">
                 <div className="flex justify-start items-center h-full p-2">
                   <img
                     src="https://cdn1.ntv.com.tr/gorsel/VI4np0LDZkiJP4m8SjqBVA.jpg?width=1000&mode=crop&scale=both"
@@ -151,15 +173,15 @@ const LeftMenu = () => {
               </div>
             </Link>
           </div>
-          <div className="w-full ml-5 h-14 p-3  hover:bg-slate-50 hover:rounded-3xl duration-300 delay-100 cursor-pointer ">
+          <div className="w-full ml-5 h-14 p-3  hover:bg-slate-100 hover:rounded-xl duration-300 delay-100 cursor-pointer ">
             <div className="flex justify-start items-center">
               <RxHamburgerMenu className="mr-4 text-2xl" />
               <div className={show ? "text-hidden" : "hidden"}>Daha fazla</div>
             </div>
           </div>
-        </div>        
+        </div>
       </div>
-      <SearchSlideMenu show={show} />      
+      <SearchSlideMenu show={show} notice={notice} />
     </>
   );
 };
