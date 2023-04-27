@@ -48,7 +48,7 @@ const FollowSuggestion = () => {
         <div className=" flex items-center mb-4">
           <Link to="">
             <img
-              className=" h-[58px] w-[s58px] rounded-full  object-cover"
+              className=" h-[58px] w-[58px] rounded-full object-cover "
               src="https://cdn1.ntv.com.tr/gorsel/VI4np0LDZkiJP4m8SjqBVA.jpg?width=1000&mode=crop&scale=both"
               alt=""
             />
