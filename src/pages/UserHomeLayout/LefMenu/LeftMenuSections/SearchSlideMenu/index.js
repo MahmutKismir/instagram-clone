@@ -22,7 +22,7 @@ const SearchSlideMenu = ({ show, notice }) => {
                 className=" w-full h-10 py-1 px-4 bg-[#efefef] rounded-md relative outline-none border-none "
                 placeholder="Ara"
               />
-              <RiCloseCircleFill className="absolute mt-3 ml-[310px] text-[#c8c8c8]" />
+              <RiCloseCircleFill className="absolute mt-3 ml-[310px] cursor-pointer text-[#c8c8c8]" />
             </div>
           </div>
           <div className="w-full h-full border-t ">
