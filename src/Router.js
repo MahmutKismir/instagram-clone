@@ -4,10 +4,11 @@ import Register from "./pages/Register/Register";
 import PasswordReset from "./pages/PasswordReset";
 import Reels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Reels/Reels";
 import UserHomeLayout from "./pages/UserHomeLayout";
-import UserProfile from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile";
+
 import UserHome from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserHome/UserHome";
 import Discover from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Discover/Discover";
 import Message from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/Message/Message";
+import UserProfile from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/UserProfile";
 
 
 function Router() {
