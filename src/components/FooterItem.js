@@ -4,7 +4,7 @@ import CountrySelect from "./CountrySelect";
 const FooterItem = () => {
   return (
     <>
-      <ul className="flex flex-wrap items-center justify-center text-gray-500 text-xs">
+      <ul className="flex flex-wrap  items-center justify-center text-gray-500 text-xs">
         <li className="mr-3">
           <a href="#">Meta</a>
         </li>

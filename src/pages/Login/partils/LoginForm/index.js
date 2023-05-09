@@ -26,7 +26,7 @@ const LoginForm = () => {
             <button className="font-bold text-gray-500">Göster</button>
           </div>
         </div>
-        <Link to="/user-home-layout">
+        <Link to="/userHome">
           <LoginButton />
         </Link>
         <OrItem />

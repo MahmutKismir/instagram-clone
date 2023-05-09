@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Settingİcon from "../../../../../../static/settingicon.svg";
+import SettingModal from "./SettingModal";
 
 const Header = () => {
+  const [modal, setModal] = useState(false);
+
   return (
     <>
       <header className="w-[940px] h-[150px] mb-9 flex ">
@@ -21,7 +24,10 @@ const Header = () => {
                 Profili düzenle
               </Link>
             </div>
-            <button className="h-[40px] w-[40px] p-2  ">
+            <button
+              onClick={() => setModal(true)}
+              className="h-[40px] w-[40px] p-2  "
+            >
               <img src={Settingİcon} alt="" />
             </button>
           </div>
@@ -45,6 +51,7 @@ const Header = () => {
           </div>
         </section>
       </header>
+      <SettingModal modal={modal} onClose={() => setModal(false)} />
     </>
   );
 };
