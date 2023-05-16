@@ -13,7 +13,7 @@ import TaggedİconBlack from "../../../../../../static/taggedicondark.svg";
 const tabs = [
   {
     title: "GÖNDERİLER",
-    path: "-",
+    path: "",
     icon: {
       active: AllİmageBlack,
       pasive: Allİmage,
