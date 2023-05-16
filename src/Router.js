@@ -12,6 +12,8 @@ import AllPosts from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfil
 import ProfileReels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/ProfileReels/ProfileReels";
 import Tagged from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/Tagged/Tagged";
 import Saved from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/Saved/Saved";
+import Followers from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/Header/Followers";
+import Following from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/Header/Following";
 
 
 function Router() {
@@ -54,7 +56,7 @@ function Router() {
           children: [
             {              
               index:true,   
-              path:'-',           
+              path:'',           
               element:<AllPosts/>
             },
             {
@@ -68,6 +70,14 @@ function Router() {
             {
               path:'taged',
               element:<Tagged />
+            },
+            {
+              path:'followers',
+              element:<Followers />
+            },
+            {
+              path:'following',
+              element:<Following />
             }
 
           ]

@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Settingİcon from "../../../../../../static/settingicon.svg";
 import SettingModal from "./SettingModal";
+import Followers from "./Followers";
+import Following from "./Following";
 
 const Header = () => {
   const [modal, setModal] = useState(false);
+  const [followers, setFollowers] = useState(false);
+  const [following, setFollowing] = useState(false);
 
   return (
     <>
@@ -35,13 +39,16 @@ const Header = () => {
             <div className="w-[120px] h-[38px] flex items-center  ">
               <span className="font-semibold mr-1">198</span> gönderi
             </div>
-            <Link>
-              <div className="w-[120px] h-[38px] flex items-center mr-4  ">
+            <Link to="followers">
+              <div
+                onClick={() => setFollowers(true)}
+                className="w-[120px] h-[38px] flex items-center mr-4  "
+              >
                 <span className="font-semibold mr-1">2.32 m</span> takipçi
               </div>
             </Link>
-            <Link>
-              <div className="w-[120px] h-[38px] flex items-center  ">
+            <Link to='following'>
+              <div onClick={() => setFollowing(true)} className="w-[120px] h-[38px] flex items-center  ">
                 <span className="font-semibold mr-1">2.68 b</span> takip
               </div>
             </Link>
@@ -52,6 +59,8 @@ const Header = () => {
         </section>
       </header>
       <SettingModal modal={modal} onClose={() => setModal(false)} />
+      <Followers followers={followers} onClose={() => setFollowers(false)} />
+      <Following following={following} onClose={() => setFollowing(false)} />
     </>
   );
 };
