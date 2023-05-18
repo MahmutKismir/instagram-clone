@@ -8,7 +8,7 @@ const ProfileReels = () => {
   return (
     <>
       <div className="w-full grid grid-cols-4 gap-1">
-        <div className="h-[361px] w-[232px] ">
+        <div className="h-[361px] w-[232px] relative ">
           <div className=" absolute mt-40 ml-12   text-white flex justify-between items-center  w-[135px]">
             <span className=" flex text-white justify-center items-center">
               <AiFillHeart className="mr-2 text-xl" />
@@ -19,7 +19,7 @@ const ProfileReels = () => {
               293
             </span>
           </div>
-          <div className=" w-[50px] h-[16px] absolute -bottom-4 ml-4  flex items-center  ">
+          <div className=" w-[50px] h-[16px] absolute left-2 bottom-2  flex items-center  ">
             <img src={MiniPlayIcon} className="" alt="" />
             <span className="text-white ml-2">245</span>
           </div>

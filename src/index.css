@@ -39,9 +39,12 @@
   }
   .icon-show {
     display: flex;
+    width: 48px;
+    align-items: center;
+    justify-content: center;
   }
   .res-width {
-    width: 95px;
+    width: 75px;
     transition-duration: 0.5s;            
   }
   
@@ -55,7 +58,7 @@
 
 @media only screen and (max-width: 1024px) {
   .res-width {
-    width: 95px;
+    width: 75px;
     transition-duration: 0.5s;    
   }
 }

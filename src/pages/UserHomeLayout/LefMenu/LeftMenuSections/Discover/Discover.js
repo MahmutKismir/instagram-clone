@@ -9,6 +9,12 @@ import DiscoverModal from "./DiscoverModal";
 const Discover = () => {
   const [data, seData] = useState(reelsData);
   const [showModal, setShowModal] = useState(false);
+  const handleClick = (id) => {
+    setShowModal(true)    
+    console.log(id)
+  }
+ 
+  // console.log(dataİd)
 
   return (
     <>
@@ -18,7 +24,7 @@ const Discover = () => {
             {data.map((item, index) => {
               return (
                 <div
-                  onClick={() => setShowModal(true)}
+                  onClick={() => handleClick(item.id)}
                   key={index}
                   className={
                     item.reels
@@ -72,7 +78,8 @@ const Discover = () => {
                 </div>
               );
             })}
-            <DiscoverModal
+            <DiscoverModal            
+              data={data}
               showModal={showModal}
               onClose={() => setShowModal(false)}
             />

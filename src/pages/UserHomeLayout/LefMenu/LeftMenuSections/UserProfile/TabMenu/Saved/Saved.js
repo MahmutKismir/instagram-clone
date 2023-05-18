@@ -16,13 +16,13 @@ const Saved = () => {
           </div>
         </div>
         <div className="w-[900px] grid grid-cols-3 gap-1">
-          <div className="h-[298px] w-[297px] grid grid-cols-2 gap-1 rounded hover:opacity-90" >
+          <div className="h-[298px] w-[297px] grid grid-cols-2 gap-1 rounded hover:opacity-90 relative " >
             {[...Array(4)].map((item, index) => (
               <div className="w-[147px] h-[147px] rounded cursor-pointer">
                 <img src='https://i.insider.com/565ddbb48430761f008b67b4?width=1136&format=jpeg'  className="object-cover h-full w-full" alt="" />
               </div>
             ))}
-            <span className="font-semibold text-white text-xl absolute bottom-0 -mb-5 ml-4">Tüm Gönderiler</span>
+            <span className="font-semibold text-white text-xl absolute bottom-2 left-2">Tüm Gönderiler</span>
           </div>
           <div className="h-[298px] w-[298px]  rounded "></div>
           <div className="h-[298px] w-[298px]  rounded "></div>

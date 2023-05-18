@@ -39,7 +39,7 @@ const Header = () => {
             <div className="w-[120px] h-[38px] flex items-center  ">
               <span className="font-semibold mr-1">198</span> gönderi
             </div>
-            <Link to="followers">
+            <Link>
               <div
                 onClick={() => setFollowers(true)}
                 className="w-[120px] h-[38px] flex items-center mr-4  "
@@ -47,7 +47,7 @@ const Header = () => {
                 <span className="font-semibold mr-1">2.32 m</span> takipçi
               </div>
             </Link>
-            <Link to='following'>
+            <Link>
               <div onClick={() => setFollowing(true)} className="w-[120px] h-[38px] flex items-center  ">
                 <span className="font-semibold mr-1">2.68 b</span> takip
               </div>
