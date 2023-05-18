@@ -6,23 +6,30 @@ import { FiMessageCircle } from "react-icons/fi";
 import { Icon } from "@iconify/react";
 import mjdunk from "../../../../../static/mjdunk.mp4";
 
-const DiscoverModal = ({ showModal, onClose }) => {
+const DiscoverModal = ({ showModal, onClose, data }) => {
   if (!showModal) {
     return false;
   }
+  console.log(data);
   return (
     <>
       <div
         onClick={onClose}
         className="bg-[rgba(0,0,0,0.4)] fixed z-[500]  top-0 bottom-0 left-0 right-0 flex  justify-center item-center "
       >
-        <button className="absolute top-1/3 left-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  ">
+        <button
+          onClick={(e) => e.stopPropagation()}
+          className="absolute top-2/4 left-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  "
+        >
           <Icon
             className="text-4xl text-gray-600"
             icon="ic:sharp-keyboard-arrow-left"
           />
         </button>
-        <button className="absolute top-1/3 right-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  ">
+        <button
+          onClick={(e) => e.stopPropagation()}
+          className="absolute top-2/4 right-5 h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center  "
+        >
           <Icon
             className="text-4xl text-gray-600"
             icon="ic:sharp-keyboard-arrow-right"
