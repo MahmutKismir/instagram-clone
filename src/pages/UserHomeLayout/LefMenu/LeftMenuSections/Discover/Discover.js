@@ -14,7 +14,7 @@ const Discover = () => {
     console.log(id)
   }
  
-  // console.log(dataİd)
+
 
   return (
     <>
