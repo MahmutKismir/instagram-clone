@@ -6,11 +6,11 @@ import { FiMessageCircle } from "react-icons/fi";
 import { Icon } from "@iconify/react";
 import mjdunk from "../../../../../static/mjdunk.mp4";
 
-const DiscoverModal = ({ showModal, onClose, data }) => {
+const DiscoverModal = ({ showModal, onClose }) => {
   if (!showModal) {
     return false;
   }
-  console.log(data);
+ 
   return (
     <>
       <div

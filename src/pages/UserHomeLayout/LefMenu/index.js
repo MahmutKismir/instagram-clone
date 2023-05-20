@@ -59,7 +59,7 @@ const LeftMenu = ({ ...props }) => {
   const [notice, setNotice] = useState(false);
   const [create, setCreate] = useState(false);
 
-  console.log(props);
+
 
   const showEffect = () => {
     setShow((prevShow) => !prevShow);

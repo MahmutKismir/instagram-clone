@@ -12,6 +12,8 @@ import AllPosts from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfil
 import ProfileReels from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/ProfileReels/ProfileReels";
 import Tagged from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/Tagged/Tagged";
 import Saved from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserProfile/TabMenu/Saved/Saved";
+import AllSuggestion from "./pages/UserHomeLayout/LefMenu/LeftMenuSections/UserHome/FollowSuggestion/AllSuggestion";
+
 
 
 function Router() {
@@ -38,7 +40,7 @@ function Router() {
         },       
         {
           path: "discover",
-          element:<Discover />
+          element:<Discover />          
         },
         {
           path:'reels',
@@ -70,6 +72,10 @@ function Router() {
               element:<Tagged />
             },           
           ]
+        },
+        {            
+          path:'people',
+          element:<AllSuggestion />
         }
       ],
     },
