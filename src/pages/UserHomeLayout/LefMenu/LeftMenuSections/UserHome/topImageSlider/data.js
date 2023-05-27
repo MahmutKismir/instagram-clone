@@ -100,5 +100,104 @@ export const reelsData = [
       image:
         "https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
     },
+    {
+      id: 16,
+      username: "alenIverson",
+      name: "Allen Iverson",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/2/21/Allen_Iverson_headshot.jpg",
+    },
+    {
+      id: 17,
+      username: "airCanada",
+      name: "Vince Carter",
+      reels:vincereels        
+    },
+    {
+      id: 18,
+      username: "tmac",
+      name: "Tracy Lamar McGrady",
+      image:
+        "https://media.gettyimages.com/id/51188472/photo/tracy-mcgrady-portraits.jpg?s=1024x1024&w=gi&k=20&c=V6RLb1Q3ZZrFGljovDMhhwJDcR1i_f_uDwqoZJ3x-6M=",
+    },
+    {
+      id: 19,
+      username: "Mj",
+      name: "Michael Jordan",
+      video:mjdunk,     
+    },
+    {
+      id: 20,
+      username: "shaq",
+      name: "Shaquille O'Neal",
+      image:
+        "https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
+    },
+    {
+      id: 20,
+      username: "alenIverson",
+      name: "Allen Iverson",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/2/21/Allen_Iverson_headshot.jpg",
+    },
+    {
+      id: 21,
+      username: "airCanada",
+      name: "Vince Carter",
+      reels:vincereels        
+    },
+    {
+      id: 22,
+      username: "tmac",
+      name: "Tracy Lamar McGrady",
+      image:
+        "https://media.gettyimages.com/id/51188472/photo/tracy-mcgrady-portraits.jpg?s=1024x1024&w=gi&k=20&c=V6RLb1Q3ZZrFGljovDMhhwJDcR1i_f_uDwqoZJ3x-6M=",
+    },
+    {
+      id: 23,
+      username: "Mj",
+      name: "Michael Jordan",
+      video:mjdunk,     
+    },
+    {
+      id: 24,
+      username: "shaq",
+      name: "Shaquille O'Neal",
+      image:
+        "https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
+    },
+    {
+      id: 25,
+      username: "alenIverson",
+      name: "Allen Iverson",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/2/21/Allen_Iverson_headshot.jpg",
+    },
+    {
+      id: 26,
+      username: "airCanada",
+      name: "Vince Carter",
+      reels:vincereels        
+    },
+    {
+      id: 27,
+      username: "tmac",
+      name: "Tracy Lamar McGrady",
+      image:
+        "https://media.gettyimages.com/id/51188472/photo/tracy-mcgrady-portraits.jpg?s=1024x1024&w=gi&k=20&c=V6RLb1Q3ZZrFGljovDMhhwJDcR1i_f_uDwqoZJ3x-6M=",
+    },
+    {
+      id: 28,
+      username: "Mj",
+      name: "Michael Jordan",
+      video:mjdunk,     
+    },
+    {
+      id: 29,
+      username: "shaq",
+      name: "Shaquille O'Neal",
+      image:
+        "https://i.discogs.com/t9FELUtAHyppVdYIkWQNUX5k35nD5LwNXfYMqwdMbA4/rs:fit/g:sm/q:90/h:742/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY2MTUz/LTE2MjkxNTExMzMt/NjM5MS5qcGVn.jpeg",
+    },
    
   ];
