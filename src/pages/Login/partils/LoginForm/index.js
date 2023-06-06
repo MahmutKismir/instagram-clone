@@ -1,8 +1,10 @@
 import React from "react";
 import { GrFacebook } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import LoginButton from "../../../../components/LoginButton";
+
 import OrItem from "../../../../components/OrItem";
+import Button from "../../../../components/Button";
+import Input from "../../../../components/inputs/Input";
 
 const LoginForm = () => {
   return (
@@ -11,23 +13,21 @@ const LoginForm = () => {
         className="flex flex-col align-middle items-center"
         onSubmit={(e) => e.preventDefault()}
       >
-        <input
-          type="text"
-          placeholder="Telefon numarası, kullanıcı adı veya e-posta"
-          className="border border-border-color focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-1 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
-        />
-        <div className="flex">
-          <input
+        <Input type='text' placeholder='Telefon numarası, kullanıcı adı veya e-posta' />
+        <div className="flex relative w-full">
+          <Input type='password' placeholder='Şifre' />
+          {/* <input
             type="password"
             placeholder="Şifre"
-            className="border-1 focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-4 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
+            className="border-1 relative focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-4 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
           />
-          <div className="absolute ml-56 mt-2">
+          <div className="absolute right-2 top-2">
             <button className="font-bold text-gray-500">Göster</button>
-          </div>
+          </div> */}
+          
         </div>
         <Link to="/userHome">
-          <LoginButton />
+          <Button title='Giriş Yap' type='submit' />
         </Link>
         <OrItem />
         <button className="flex justify-center align-middle items-center mt-6">
@@ -41,7 +41,7 @@ const LoginForm = () => {
             </Link>
           </span>
         </button>
-        <button className="mt-3">
+        <button className="p-2">
           <span className="text-blue-900 text-xs">
             <Link to="/passwordreset">Şifreni mi unuttun?</Link>
           </span>

@@ -3,28 +3,12 @@ import { Icon } from "@iconify/react";
 import { reelsData } from "./data";
 
 const TopImageSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideLength = reelsData.length;
-
-  const nextSlide = () => {
-    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-  };
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide - 1);
-  };
-
-  console.log(currentSlide);
-
-  useEffect(() => {
-    setCurrentSlide(0);
-  }, []);
-
+  
   return (
     <>
       <div className=" w-[588px] flex h-28 mt-4 pt-4 pl-2 items-center overflow-x-hidden relative overflow-y-hidden mb-8">
         <button className="h-[45px] w-[45px] flex justify-center items-center z-50 absolute left-0">
-          <Icon
-            onClick={prevSlide}
+          <Icon           
             className="text-4xl text-white opacity-0.5"
             icon="mdi:chevron-left-circle"
           />
@@ -34,11 +18,7 @@ const TopImageSlider = () => {
           return (
             <ul
               key={index}
-              className={
-                currentSlide
-                  ? "flex  h-full items-center transition delay-100 duration-200 transform -translate-x-[300px] "
-                  : "flex  h-full items-center transition delay-100 duration-200 transform translate-x-[300px] "
-              }
+              className='"flex  h-full items-center transition delay-100 duration-200 transform -translate-x-[300px] "'
             >
               <li
                 key={index}
@@ -61,8 +41,7 @@ const TopImageSlider = () => {
           );
         })}
 
-        <button
-          onClick={nextSlide}
+       <button         
           className="h-[85px] w-10  flex items-center absolute right-0 "
         >
           <Icon

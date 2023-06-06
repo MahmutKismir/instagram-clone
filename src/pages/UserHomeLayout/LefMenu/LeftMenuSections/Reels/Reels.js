@@ -6,14 +6,14 @@ import { FiMessageCircle } from "react-icons/fi";
 import { BsThreeDots } from "react-icons/bs";
 
 const Reels = () => {
-  const [sound, setSound] = useState(true);
-  const [play, setPlay] = useState(true);
+  const [sound, setSound] = useState(false);
+  const [play, setPlay] = useState(false);
 
   const soundControl = () => {
-    sound ? setSound(false) : setSound(true);
+    setSound((sound) => !sound);
   };
   const playControl = () => {
-    play ? setPlay(false) : setPlay(true);
+    setPlay((play) => !play);
   };
   return (
     <>
@@ -25,13 +25,13 @@ const Reels = () => {
               className="flex justify-center h-screen w-full lg:ml-44 mb-10 "
             >
               <div className="flex  h-full w-[430px]  ">
-                <div className="h-[90%] w-[360px] rounded-md  ">
+                <div className="h-[90%] w-[360px] rounded-md  relative ">
                   <div className="w-[357px] h-[50px] absolute mt-1 flex justify-end z-50  ">
                     <div
                       onClick={soundControl}
                       className="h-[35px] w-[35px] bg-gray-200 opacity-30 absolute top-2 right-3   flex justify-center items-center rounded-full cursor-pointer  "
                     >
-                      {!sound ? (
+                      {sound ? (
                         <Icon
                           icon="teenyicons:sound-on-solid"
                           className="text-xl"
@@ -42,16 +42,19 @@ const Reels = () => {
                           className="text-xl"
                         />
                       )}
-                      {!play && (
-                        <div className=" bg-[rgba(0,0,0,9.9)] flex justify-center items-center rounded-full absolute top-[250px] right-[135px] h-[70px] w-[70px]  ">
-                          <Icon
-                            icon="material-symbols:play-arrow-rounded"
-                            className="text-4xl text-white "
-                          />
-                        </div>
-                      )}
                     </div>
                   </div>
+                  {play && (
+                    <div
+                      onClick={playControl}
+                      className=" bg-[rgb(7,7,7)] opacity-40 flex justify-center items-center rounded-full absolute top-[350px] right-[140px] h-[70px] w-[70px] "
+                    >
+                      <Icon
+                        icon="material-symbols:play-arrow-rounded"
+                        className="text-6xl text-white "
+                      />
+                    </div>
+                  )}
 
                   <video
                     onClick={playControl}

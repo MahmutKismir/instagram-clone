@@ -1,49 +1,84 @@
 import React from "react";
 import CountrySelect from "./CountrySelect";
+import { Link } from "react-router-dom";
+
+const footerItems = [
+  {
+    id: 1,
+    title: "Meta",
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "Hakkında",
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "Blog",
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "İş Fırsatları",
+    link: "#",
+  },
+  {
+    id: 5,
+    title: "Yardım",
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "API",
+    link: "#",
+  },
+  {
+    id: 7,
+    title: "Gizlilik",
+    link: "#",
+  },
+  {
+    id: 8,
+    title: "Koşullar",
+    link: "#",
+  },
+  {
+    id: 9,
+    title: "Başlıca Hesaplar",
+    link: "#",
+  },
+  {
+    id: 10,
+    title: "Konumlar",
+    link: "#",
+  },
+  {
+    id: 11,
+    title: "İnstagram Lite",
+    link: "#",
+  },
+  {
+    id: 12,
+    title: "Kişi Yükleme ve Hesabı Olmayan Kişiler",
+    link: "#",
+  },
+  {
+    id: 13,
+    title: "Meta Verified",
+    link: "#",
+  },
+];
 
 const FooterItem = () => {
   return (
     <>
       <ul className="flex flex-wrap  items-center justify-center text-gray-500 text-xs">
-        <li className="mr-3">
-          <a href="#">Meta</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Hakkında</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Blog</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">İş Fırsatları</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Yardım</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">API</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Gizlilik</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Koşullar</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Başlıca Hesaplar</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Konumlar</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">İnstagram Lite</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Kişi Yükleme ve Hesabı Olmayan Kişiler</a>
-        </li>
-        <li className="mr-3">
-          <a href="#">Meta Verified</a>
-        </li>
+        {footerItems.map((item) => (
+          <li key={item.id} className="mr-3">
+            <Link to={item.link}>{item.title}</Link>
+          </li>
+        ))}
       </ul>
       <ul className="flex justify-center mt-4 text-gray-500 text-xs">
         <li className="mr-5">

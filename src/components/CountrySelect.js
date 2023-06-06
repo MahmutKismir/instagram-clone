@@ -1,8 +1,19 @@
-import React from "react";
+
+import React, { useState, useMemo } from 'react'
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
+
 
 const CountrySelect = () => {
+  // const [value, setValue] = useState('')
+  // const options = useMemo(() => countryList().getData(), [])
+
+  // const changeHandler = value => {
+  //   setValue(value)
+  // }
   return (
     <>
+    {/* <Select options={options} value={value} onChange={changeHandler} /> */}
       <select className="border-none outline-none w-16 text-gray-500" value="tr" name="" id="">
         <option value="af">Afrikaans</option>
         <option value="cs">Čeština</option>
