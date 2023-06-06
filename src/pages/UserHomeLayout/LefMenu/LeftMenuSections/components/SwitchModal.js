@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Close from "../../../../../static/messageModal.svg";
 import InstagramText from "../../../../../static/insta.png";
-import LoginButton from "../../../../../components/LoginButton";
+
 
 const SwitchModal = ({ switchModal, onClose }) => {
   const [loginModal, setLoginModal] = useState(true);
@@ -111,7 +111,7 @@ const SwitchModal = ({ switchModal, onClose }) => {
                   <span className="text-xs ml-2">Giriş bilgilerini kaydet</span>
               </div>
               <Link to=" ">
-                <LoginButton />
+                
               </Link>              
               <button className="mt-3">
                 <span className="text-blue-900 text-xs">

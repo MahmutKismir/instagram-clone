@@ -3,10 +3,11 @@ import InstagramText from "../../../src/static/insta.png";
 import { Link } from "react-router-dom";
 import OrItem from "../../components/OrItem";
 import { Icon } from "@iconify/react";
-import LoginButton from "../../components/LoginButton";
 import AppStore from "../../../src/static/appstore.png";
 import PlayStore from "../../../src/static/playstore.png";
 import FooterItem from "../../components/FooterItem";
+import Button from "../../components/Button";
+import Input from "../../components/inputs/Input";
 
 const Register = () => {
   return (
@@ -19,49 +20,36 @@ const Register = () => {
           <div className="mt-7 mb-2">
             <img src={InstagramText} alt="" />
           </div>
+
+          <h2 className="mr-5 ml-5 mb-5 text-center text-xl text-gray-400 font-semibold">
+            Arkadaşlarının fotoğraf ve videolarını görmek için kaydol.
+          </h2>
+          <button className=" bg-[#0095f6] w-72 outline-none  text-white rounded-lg font-bold text-sm h-8 flex justify-center items-center">
+            <Icon className="mr-1 text-xl" icon="carbon:logo-facebook" />
+            <Link
+              to="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%252218r7pc6662rs57iyfhhxpa77j2xgpq1q4o8qr1ugzuoys2wrzu%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Dtr_TR%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D297b8724-65f9-46f7-ad96-41c32adb0a4a%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%252218r7pc6662rs57iyfhhxpa77j2xgpq1q4o8qr1ugzuoys2wrzu%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=tr_TR&pl_dbl=0"
+              target={"_blank"}
+            >
+              Facebook ile Giriş Yap
+            </Link>
+          </button>
+
+          <div className="mb-5">
+            <OrItem />
+          </div>
           <form
-            className="flex flex-col align-middle items-center"
+            className="flex flex-col align-middle items-center px-12"
             onSubmit={(e) => e.preventDefault()}
           >
-            <h2 className="mr-5 ml-5 mb-5 text-center text-xl text-gray-400 font-semibold">
-              Arkadaşlarının fotoğraf ve videolarını görmek için kaydol.
-            </h2>
-
-            <button className=" bg-[#0095f6] w-72 outline-none  text-white rounded-lg font-bold text-sm h-8 flex justify-center items-center">
-              <Icon className="mr-1 text-xl" icon="carbon:logo-facebook" />
-              <Link
-                to="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%252218r7pc6662rs57iyfhhxpa77j2xgpq1q4o8qr1ugzuoys2wrzu%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Dtr_TR%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D297b8724-65f9-46f7-ad96-41c32adb0a4a%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%252218r7pc6662rs57iyfhhxpa77j2xgpq1q4o8qr1ugzuoys2wrzu%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=tr_TR&pl_dbl=0"
-                target={"_blank"}
-              >
-                Facebook ile Giriş Yap
-              </Link>
-            </button>
-
-            <div className="mb-5">
-              <OrItem />
-            </div>
-            <input
-              type="text"
+            <Input
+              type={"text" | "email"}
               placeholder="Cep Telefonu Numarası veya E-posta"
-              className="border border-border-color focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-1 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
             />
-            <input
-              type="text"
-              placeholder="Adı Soyadı"
-              className="border border-border-color focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-1 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Kullanıcı adı"
-              className="border border-border-color focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-1 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
-            />
-            <div className="flex">
-              <input
-                type="password"
-                placeholder="Şifre"
-                className="border-1 focus:text-[10px] focus:placeholder:-translate-y-2 focus:placeholder:duration-500 w-72 h-10 pl-2 mb-4 text-[13px] font-normal outline-1 outline-gray-200 bg-gray-50 rounded"
-              />
-              <div className="absolute ml-56 mt-2">
+            <Input type="text" placeholder="Adı Soyadı" />
+            <Input type="text" placeholder="Kullanıcı adı" />
+            <div className="flex relative w-full">
+              <Input type="password" placeholder="Şifre" />
+              <div className="absolute right-2 top-2">
                 <button className="font-bold text-gray-500">Göster</button>
               </div>
             </div>
@@ -103,7 +91,7 @@ const Register = () => {
               </Link>{" "}
               kabul etmiş olursun.
             </span>
-            <LoginButton />
+            <Button title="Kaydol" />
           </form>
         </div>
         <div
@@ -149,7 +137,7 @@ const Register = () => {
         </div>
       </div>
       <div className="mb-12">
-      <FooterItem />
+        <FooterItem />
       </div>
     </>
   );

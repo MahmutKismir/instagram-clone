@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useLocation, matchPath } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink, useLocation, matchPath } from "react-router-dom";
 import AllİmageBlack from "../../../../../../static/allimageicon.svg";
 import Allİmage from "../../../../../../static/allimagesoft.svg";
 import Reelsİcon from "../../../../../../static/smallreelsicon.svg";
@@ -47,23 +47,23 @@ const tabs = [
 
 const TabMenu = () => {
   const { pathname } = useLocation();
-  const match = (path) =>
-    path ? !!matchPath({ path, end: false }, pathname) : false;
-  console.log(matchPath);
-  console.log(match)
+ 
+
+
 
   return (
     <>
       <div className="w-full h-[53px] border-t flex justify-center ">
         {tabs.map((item, index) => (
-          <Link
+          <NavLink
             key={index}
-            to={item.path}           
+            to={item.path}                       
             className={
               pathname === `/userprofile/${item.path}`
                 ? "h-[51px] flex items-center mr-[60px] border-t border-black  "
                 : "h-[52px] flex items-center mr-[60px] "
             }
+            
           >
             {pathname === `/userprofile/${item.path}` ? (
               <img src={item.icon.active} alt="" />
@@ -80,7 +80,7 @@ const TabMenu = () => {
             >
               {item.title}
             </span>
-          </Link>
+          </NavLink>
         ))}
       </div>          
     </>
